@@ -1,0 +1,644 @@
+/* ============================================ 
+   NAVBAR STYLES 
+   ============================================ */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  min-height: 69px;
+}
+
+/* ============================================ 
+   LEFT SECTION 
+   ============================================ */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #495057;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.mobile-menu-toggle:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+  color: #007bff;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================ 
+   CENTER NAVIGATION 
+   ============================================ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  padding: 10px 18px;
+  margin: 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  color: #495057;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+.nav-link:hover::after {
+  width: 60%;
+}
+
+.nav-link.active {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* ============================================ 
+   RIGHT SECTION 
+   ============================================ */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #495057;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.icon-btn:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+  color: #007bff;
+  transform: translateY(-1px);
+}
+
+.notification-icon {
+  font-size: 24px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.add-icon-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: #fff;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.add-icon-btn .btn-icon {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.add-icon-btn .btn-text {
+  display: inline;
+}
+
+.add-icon-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.add-icon-btn:active {
+  transform: translateY(0);
+}
+
+.logout-btn:hover {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.08);
+}
+
+/* ============================================ 
+   MOBILE MENU OVERLAY 
+   ============================================ */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  backdrop-filter: blur(2px);
+}
+
+.mobile-menu-overlay.show {
+  display: block;
+}
+
+/* ============================================ 
+   LOGOUT MODAL 
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  color: #212529;
+  font-weight: 600;
+}
+
+.modal p {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.btn-cancel {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.btn-cancel:hover {
+  background-color: #dee2e6;
+  transform: translateY(-1px);
+}
+
+.btn-confirm {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* ============================================ 
+   RESPONSIVE DESIGN - TABLET 
+   ============================================ */
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .brand-name {
+    font-size: 18px;
+  }
+  /* .back-btn-navbar {
+ display: none;
+}
+
+.back-btn-navbar:hover {
+ display: none;
+}
+
+.back-icn {
+  display: none;
+} */
+}
+
+/* ============================================ 
+   RESPONSIVE DESIGN - MOBILE 
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 20px;
+  }
+  
+
+  .mobile-menu-toggle {
+    display: flex;
+    width: 30px;
+  }
+
+  .navbar-left {
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  /* Hide the Add Transaction text, show only icon */
+  .add-icon-btn {
+    padding: 10px;
+    width: 40px;
+    height: 44px;
+    gap: 0;
+    margin-left: -20px;
+  }
+
+  .add-icon-btn .btn-text {
+    display: none;
+  }
+
+  .add-icon-btn .btn-icon {
+    font-size: 22px;
+  }
+
+  /* Mobile Navigation Menu */
+  .nav-links {
+    position: fixed;
+    top: 69px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 69px);
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 0;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    transition: left 0.3s ease;
+    z-index: 99;
+    overflow-y: auto;
+    gap: 0;
+  }
+
+  .nav-links.show {
+    left: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 0;
+    text-align: left;
+    font-size: 16px;
+    border-left: 4px solid transparent;
+    justify-content: flex-start;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    border-left-color: #007bff;
+  }
+
+  .nav-link.active {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-left-color: #007bff;
+    color: #007bff;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .icon-btn {
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+
+/* ============================================ 
+   RESPONSIVE DESIGN - SMALL MOBILE 
+   ============================================ */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 10px 16px;
+  }
+.back-btn-navbar {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  cursor: pointer;
+  width: 50px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-btn-navbar:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+.back-icn {
+  font-size: 20px; /* increased size */
+  color: #007bff; /* blue to match theme */
+}
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-menu-toggle {
+    font-size: 24px;
+    padding: 6px;
+  }
+
+  .add-icon-btn {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .add-icon-btn .btn-icon {
+    font-size: 20px;
+  }
+
+  .icon-btn {
+    padding: 8px;
+    font-size: 20px;
+  }
+
+  .navbar-right {
+    gap: 6px;
+  }
+
+  .nav-links {
+    width: 260px;
+  }
+
+  .modal {
+    padding: 24px 20px;
+    width: 92%;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .modal p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ============================================ 
+   RESPONSIVE DESIGN - EXTRA SMALL 
+   ============================================ */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 8px 12px;
+  }
+
+  .back-btn-navbar {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  cursor: pointer;
+  width: 50px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-btn-navbar:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+.back-icn {
+  font-size: 20px; /* increased size */
+  color: #007bff; /* blue to match theme */
+}
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-left {
+    gap: 6px;
+  }
+
+  .add-icon-btn,
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    font-size: 18px;
+  }
+
+  .navbar-right {
+    gap: 4px;
+  }
+}
+/* ============================================ 
+   MOBILE TOGGLE & BACK BUTTON SYNC FIX
+   ============================================ */
+@media (max-width: 768px) {
+  /* When not on dashboard, hide toggle */
+  .hidden-on-mobile {
+    display: none !important;
+  }
+
+  /* Back button visible only on mobile */
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-menu-toggle,
+  .back-btn-navbar {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #000000;
+    background-color: white;
+    
+  }
+
+  .back-btn-navbar .back-icn {
+    font-size: 25px;
+  }
+}
+
+/* Hide mobile-only back button on larger screens */
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
